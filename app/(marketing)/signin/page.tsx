@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { SignInForm } from '@/components/ui/user-signin-auth'
+import AuthButton from '@/components/ui/auth-button'
 
 
 export const metadata: Metadata = {
@@ -19,15 +20,7 @@ export default function SignIn() {
     <>
       <div className=""></div>
       <div className="container relative hidden h-[700px] flex-col items-center justify-center md:grid lg:max-w-none ">
-        <Link
-          href="/signup"
-          className={cn(
-            buttonVariants({ variant: 'ghost' }),
-            'absolute right-4 top-4 md:right-8 md:top-8'
-          )}
-        >
-          Register
-        </Link>
+     <AuthButton page='signin' />
 
         <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
