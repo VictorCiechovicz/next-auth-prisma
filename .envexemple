@@ -5,10 +5,10 @@
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 
-DATABASE_URL = "mongodb+srv://victor09avila:IaZ3FS9O7S50hiTK@next-auth.uhupn7u.mongodb.net/nextauth"
+DATABASE_URL = ""
 
-GITHUB_ID = 0ab923cab4eecc880112
+GITHUB_ID = 
 
-GITHUB_SECRET = f041508c147b48b94cd455945153c95a02fefb68
+GITHUB_SECRET = 
 
-SECRET = abcde
+SECRET = 

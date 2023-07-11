@@ -39,8 +39,6 @@ export function SignInForm({ className, ...props }: UserAuthFormProps) {
       redirect: false
     })
 
-
-
     if (response?.error) {
       toast({
         title: 'Oops...',
@@ -93,7 +91,7 @@ export function SignInForm({ className, ...props }: UserAuthFormProps) {
               placeholder="password"
               type="password"
               autoCapitalize="none"
-               disabled={isLoading}
+              disabled={isLoading}
               name="password"
               value={data.password}
               onChange={handleChange}
@@ -117,7 +115,12 @@ export function SignInForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button
+        onClick={() => signIn('github', { callbackUrl: '/' })}
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+      >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
