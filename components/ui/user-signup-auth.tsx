@@ -11,29 +11,52 @@ import { Label } from '@/components/ui/label'
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 interface IUser {
+  name: string
   email: string
   password: string
 }
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function SignUpForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState<IUser>()
-  
+  const [data, setData] = useState<IUser>({
+    name:"",
+    email: "",
+    password:"",
+  })
 
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault()
     setIsLoading(true)
 
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+    setData({
+      name: '',
+      email: '',
+      password: ''
+    })
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setData((prev) => {
+      return { ...prev, [event.target.name]: event.target.value }
+    })
   }
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
-      <form onSubmit={onSubmit}>
+       <form onSubmit={onSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="name">
+              Name
+            </Label>
+            <Input
+              id="name"
+              placeholder="name"
+              type="text"
+              value={data?.name}
+              disabled={isLoading}
+              onChange={handleChange}
+            />
             <Label className="sr-only" htmlFor="email">
               Email
             </Label>
@@ -46,12 +69,23 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCorrect="off"
               disabled={isLoading}
             />
+            <Label className="sr-only" htmlFor="password">
+              Password
+            </Label>
+            <Input
+              id="password"
+              placeholder="password"
+              type="password"
+              autoCapitalize="none"
+              autoCorrect="off"
+              disabled={isLoading}
+            />
           </div>
           <Button disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Sign In with Email
+            Sign Up with Email
           </Button>
         </div>
       </form>
