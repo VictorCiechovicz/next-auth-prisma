@@ -1,4 +1,4 @@
-![Developed Web by Victor Ciechovicz (1)](https://github.com/VictorCiechovicz/CarHub/assets/106246945/bf1fc9e3-013d-4f83-b362-086cae4da008)
+![Developed Web by Victor Ciechovicz](https://github.com/VictorCiechovicz/next-auth-prisma/assets/106246945/388ee6cf-a445-44e6-9b1b-52037a2e2cea)
 
 # ****🔐 Next Auth****
 
@@ -24,6 +24,7 @@ Clone this project and start:
 ```js
   git clone
   npm install
+  config ambient variables
   npm run dev
 ```
 https://car-hub-sage.vercel.app/
