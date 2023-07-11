@@ -3,7 +3,7 @@
 # ****🔐 Next Auth****
 
 
- This application is base project to auth using Next.js 13 and Next Auth. This application was created for the purpose of studies.
+ This application is base project to auth using Next.js 13, Prima, MongoDb and Next Auth. This application was created for the purpose of studies.
  
 ## ****✨ Stacks****
 
@@ -14,7 +14,6 @@
 - ManogoDB
 - JWT with bcrypt
 - Route Handlers
-- Deploy Vercel
 
 
 ## 🔧 ****Running****
@@ -27,7 +26,6 @@ Clone this project and start:
   config ambient variables
   npm run dev
 ```
-https://car-hub-sage.vercel.app/
 
 
 ## ****📄 Feedback****
