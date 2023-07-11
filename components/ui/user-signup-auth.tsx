@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label'
 import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@radix-ui/react-toast'
 import { useRouter } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -42,7 +43,6 @@ export function SignUpForm({ className, ...props }: UserAuthFormProps) {
     })
 
     const response = await request.json()
-    console.log(response)
     if (response?.error) {
       toast({
         title: 'Oops...',
@@ -143,7 +143,7 @@ export function SignUpForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button  onClick={() => signIn('github', { callbackUrl: '/' })} variant="outline" type="button" disabled={isLoading}>
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
